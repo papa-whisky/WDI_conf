@@ -141,12 +141,24 @@
 }
 
 @media (min-width: 860px) {
+  .location-wrapper {
+    padding-top: 6%;
+
+    .location-content {
+      margin: 0 auto;
+
+      p:first-child {
+        margin-top: 1em;
+      }
+    }
+  }
+
   .speaker-wrapper {
     padding-top: 10vh;
 
     .speaker-list {
       margin-top: 10vh;
-      
+
       .speaker-card {
         width: 45%;
         display: inline-block;
