@@ -1,4 +1,35 @@
 @media (min-width: 500px) {
+
+  .footer-wrapper {
+    padding-top: 14%;
+
+    #cloud {
+      height: 55%;
+      font-size: 2.7em;
+    }
+
+    .footer-content {
+      width: 100%;
+      height: 95%;
+      margin-bottom: 2em;
+
+      h2 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
+
+      img {
+        padding: .5em;
+        margin: .5em;
+        width: 5em;
+        vertical-align: middle;
+      }
+    }
+  }
+
   .speaker-wrapper {
     padding-top: 9%;
 
@@ -44,6 +75,15 @@
 }
 
 @media (min-width: 700px) {
+
+  .footer-wrapper {
+    padding-top: 8%;
+
+    #cloud {
+      font-size: 4em;
+    }
+  }
+
   #modal-wrapper .modal {
     width: 685px;
     margin: 2% auto;
