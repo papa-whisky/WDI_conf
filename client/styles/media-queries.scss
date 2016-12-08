@@ -1,6 +1,10 @@
 @media (min-width: 500px) {
   .speaker-wrapper {
     padding-top: 9%;
+
+    .img-card {
+      margin-left: 25%;
+    }
   }
 
   .home-wrapper {
@@ -102,6 +106,21 @@
 
     .speaker-list {
       margin-top: 10vh;
+      
+      .speaker-card {
+        width: 45%;
+        display: inline-block;
+        margin-left: 1%;
+        margin-bottom: 1%;
+
+        .img-card {
+          margin-left: 10%;
+        }
+      }
+
+      .speaker-card:hover {
+        width: 47%;
+      }
     }
   }
 }
