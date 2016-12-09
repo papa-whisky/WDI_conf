@@ -66,14 +66,16 @@ var renderSpeakerSection = function() {
   $('.speaker-card').on('click', function(event) {
 
     $('.res-bio li').css('color', '#DB700A')
+    // Toggle to display presenter bio's on click
     $(this).children().fadeToggle();
   })
+
+  // When user leaves card, original state reappears
   $('.speaker-card').mouseleave(function() {
     $(this).children('.res-bio').fadeOut()
     $(this).children('h2').fadeIn()
     $(this).children('.img-card').fadeIn()
   })
-
 }
 
 module.exports = renderSpeakerSection;

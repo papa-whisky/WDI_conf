@@ -3,8 +3,12 @@ const fullNames = require('./../scripts/full-names.js')
 const renderConfirmationForm = require('./confirmation-form')
 
 const seatingPlan = (talk, qty) => {
+  // Generate seating plan for each talk
+  // Grabbing id for presenter
   const presenter = talk.presenter.split(' ')[talk.presenter.split(' ').length - 1].toLowerCase()
   var $plan = $('<div>').attr('id', presenter + '-seats').addClass('plan').appendTo('#seat-plan').toggle()
+
+  // Looping through objects
   Object.keys(talk.seat).forEach(function(row) {
     var $row = $('<div>')
     Object.keys(talk.seat[row]).forEach(function(seat) {
@@ -12,6 +16,7 @@ const seatingPlan = (talk, qty) => {
       if (talk.seat[row][seat] === 'reserved') {
         $seat.addClass('reserved')
       } else {
+        // Allow users to reserve seat
         $seat.click(function() {
           if ($(`#${presenter}-seats .seat-selected`).length < qty) {
             $seat.toggleClass('seat-selected')
@@ -27,6 +32,8 @@ const seatingPlan = (talk, qty) => {
 }
 
 const renderSeats = function(talks, qty) {
+
+  // Wrapper created for reserve seats page
   $('<div id="wrapper" class="modal">').appendTo('#payment-form-modal');
   $('<span class="close-btn">').text('✘').appendTo('#wrapper')
   $('<div id="seat-reserve-wrapper">').appendTo('#wrapper')
@@ -35,16 +42,19 @@ const renderSeats = function(talks, qty) {
   $('<button id="skip-btn">').text('Skip').appendTo('#seat-reserve-wrapper');
   $('<div id="stage-div">').text('stage').appendTo('#seat-reserve-wrapper');
 
+  // Creating seats for individual talks
   $('<div id="seat-plan">').appendTo('#seat-reserve-wrapper')
   talks.forEach((v) => seatingPlan(v, qty))
   $('#zuckerberg-seats').toggle()
 
+  // dropdown select box for presenters
   $('<div>').text('Choose your speaker:').appendTo('#seat-reserve-wrapper')
   $('<select>').appendTo('#seat-reserve-wrapper')
   talks.forEach((v) => {
     $('<option>').text(v.presenter).appendTo($('select'))
   })
 
+  // Displays new presenter after user click
   $('select').change((e) => {
     const presenter = e.target.value.split(' ')[e.target.value.split(' ').length -1].toLowerCase()
     $('.plan').hide()
@@ -53,6 +63,7 @@ const renderSeats = function(talks, qty) {
 
   var formData = {}
 
+  // Creates object to reserve the seat
   $('<button id="submit-reservation">').text('Submit').appendTo('#seat-reserve-wrapper')
   $('#submit-reservation').click(function() {
     $('.plan').each(function(index, plan) {
@@ -65,6 +76,8 @@ const renderSeats = function(talks, qty) {
         })
       }
     })
+
+    // sends object to the server in development
     $.ajax('http://localhost:3030/reserve', {
       method: 'post',
       data: formData
@@ -81,8 +94,8 @@ const renderSeats = function(talks, qty) {
     renderConfirmationForm();
   });
 
+  // Removes the modal wrapper
   $('.close-btn').click(function() {
-
     $('#modal-wrapper').remove();
 
   });

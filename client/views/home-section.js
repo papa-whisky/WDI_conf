@@ -2,6 +2,7 @@ const $ = require('jquery')
 
 var renderHomeSection = function() {
 
+  // Home wrapper created for landing page
   $('<div class="home-wrapper">').appendTo('#root')
   $('<div class="home-main">').appendTo('.home-wrapper')
 

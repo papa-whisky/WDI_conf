@@ -26,6 +26,7 @@ app.get('/testget', function(req, res) {
   })
 })
 
+// Reserve seat route
 app.post('/reserve', bodyparser(), function(req, res) {
   Object.keys(req.body).forEach(function(key) {
     saveReservation(key, req.body[key])
