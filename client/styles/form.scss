@@ -1,8 +1,5 @@
-
-$header-font: 'Sarala', sans-serif;
-$main-font: 'Dosis', sans-serif;
-$primary-color: #DB700A;
-$secondary-color: #FFFFFF;
+@import "_variables";
+@import "_fonts";
 
 #submit-btn {
   display: inline-block;

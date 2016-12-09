@@ -6,8 +6,8 @@ var renderSponsorsSection = function() {
   $('<div class="sponsors-wrapper" id="sponsors">').appendTo('.home-wrapper');
   $('<div class="sponsors-list">').appendTo('.sponsors-wrapper');
 
+  // Content for sponsors page
   $('<h2>').text('Sponsors').appendTo('.sponsors-list');
-
   $('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1000px-Google_2015_logo.svg.png"> ').appendTo('.sponsors-list');
   $('<img src="http://www.pragueharleydays.cz/uploaded/filemanager/hooters-logo.svg"> ').appendTo('.sponsors-list');
   $('<img src="http://static-assets.generalassemb.ly/logos/generalassembly-open-graph.png"> ').appendTo('.sponsors-list');

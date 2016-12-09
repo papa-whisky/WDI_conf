@@ -1,3 +1,5 @@
+
+// Data used for dropdown menu on reserve seating page
 module.exports = {
   'zuckerberg': 'Mark Zuckerberg',
   'dt': 'DT',

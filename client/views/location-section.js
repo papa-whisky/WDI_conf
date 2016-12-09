@@ -7,6 +7,7 @@ var renderLocationSection = function() {
   $('<div class="location-top">').appendTo('.location-wrapper');
   $('<div class="location-bottom">').appendTo('.location-wrapper');
 
+  // Location address
   $('<h1>').text('Location').appendTo('.location-top');
   $('<div class="location-content">').appendTo('.location-top');
   $('<p>').text('General Assembly').appendTo('.location-content');

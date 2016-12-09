@@ -20,10 +20,7 @@ var stripeResponseHandler = function (status, response) {
 
     // Insert the token ID into the form so it gets submitted to the server:
     $form.append($('<input type="hidden" name="stripeToken">').val(token));
-
-    // Submit the form:
-    // $form.get(0).submit();
-
+    
     var formData = {
       stripeToken: token,
       name: $('input[name="name"]').val(),
@@ -31,6 +28,7 @@ var stripeResponseHandler = function (status, response) {
       quantity: $('input[name="quantity"]').val()
     }
 
+    // Cross origin server for development
     $.ajax('http://localhost:3030/pay', {
       method: 'post',
       data: formData
