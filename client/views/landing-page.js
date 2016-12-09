@@ -25,13 +25,11 @@ var renderLandingPage = function() {
 
   $('.buy-ticket-btn, #fourth').click(function() {
 
+    // Popup modal created for payment form
     $('<div id="modal-wrapper" class="modal">').appendTo('#root').hide().fadeIn();
     $('<div id="payment-form-modal" class="modal">').appendTo('#modal-wrapper');
       renderPaymentForm()
   })
-
-
-
 }
 
 module.exports = renderLandingPage
